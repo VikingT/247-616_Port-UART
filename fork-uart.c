@@ -98,6 +98,16 @@ int main() {
         wait(NULL); // Wait for the child process to finish
     }
 
-    close(fd); // Close the serial port
+       // faire processus principal
+    int n=1;
+    while(n<10) {
+    printf("1 faire quelques trucs...\n");
+    n++;
+    sleep(3);
+    }
+    wait(NULL); // attendre la fin de enfant 1
+    wait(NULL); // attendre la fin de enfant 2
+    close(fd); // Fermer le port série
+    printf("Fin du processus Principal\n");
     return 0;
 }
